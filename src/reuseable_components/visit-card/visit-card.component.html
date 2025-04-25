@@ -1,0 +1,14 @@
+<div class="visits-card">
+    <div class="visits-header">
+        <h2>Visits</h2>
+        <div class="tab-switch">
+            <button *ngFor="let tab of tabs" (click)="changeTab(tab)" [ngClass]="{ active: selectedTab === tab }">
+                {{ tab }}
+            </button>
+
+        </div>
+    </div>
+
+    <canvas baseChart [data]="visitsChartData" [options]="visitsChartOptions" type="bar">
+    </canvas>
+</div>

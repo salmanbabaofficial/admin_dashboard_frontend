@@ -1,0 +1,18 @@
+<header class="app-header">
+    <div class="search-section">
+        <fa-icon [icon]="faSearch" class="search-icon"></fa-icon>
+        <input class="search-input" type="text" placeholder="Search" (input)="onSearchChange($event)" />
+    </div>
+    <div class="right-section">
+        <button><fa-icon [icon]="faGear"></fa-icon></button>
+        <button><fa-icon [icon]="faBell"></fa-icon></button>
+        <div class="user-info" (click)="toggleDropdown()">
+            <img src="assets/male_avatar.png" alt="User" class="avatar" />
+            <span class="username">{{ userName | titlecase }}</span>
+            <button><fa-icon [icon]="faAngleDown"></fa-icon></button>
+            <div class="dropdown" *ngIf="isDropdownOpen">
+                <button (click)="logout()">Logout</button>
+            </div>
+        </div>
+    </div>
+</header>

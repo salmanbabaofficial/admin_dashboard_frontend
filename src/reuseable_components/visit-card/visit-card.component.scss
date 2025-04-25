@@ -1,0 +1,53 @@
+.visits-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .visits-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .tab-switch {
+            display: flex;
+            gap: 6px;
+
+            button {
+                padding: 4px 8px;
+                font-size: 12px;
+                border: none;
+                background: #f3f4f6;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background 0.2s;
+
+                &.active {
+                    background: #2563EB;
+                    color: #fff;
+                }
+
+                &:hover {
+                    background: #e5e7eb;
+                }
+            }
+        }
+    }
+
+    canvas {
+        flex-grow: 1;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+}

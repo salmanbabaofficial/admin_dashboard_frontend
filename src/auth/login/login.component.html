@@ -1,0 +1,31 @@
+<div class="login-container">
+    <div class="login-card">
+        <div class="brand-section">
+            <img src="assets/login.jpeg" alt="Logo" />
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+            <h2>Login</h2>
+            <label>
+                Username
+                <input type="text" formControlName="username" />
+                <small *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.errors?.['required']">
+                    Username is required
+                </small>
+            </label>
+            <label>
+                Password
+                <div class="password-field">
+                    <input [type]="showPassword() ? 'text' : 'password'" formControlName="password" />
+                    <fa-icon *ngIf="!showPassword()" [icon]="faEye" (click)="togglePassword()"></fa-icon>
+                    <fa-icon *ngIf="showPassword()" [icon]="faEyeSlash" (click)="togglePassword()"></fa-icon>
+                </div>
+                <small *ngIf="loginForm.get('password')?.touched">
+                    <span *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</span>
+                    <span *ngIf="loginForm.get('password')?.errors?.['minlength']">Min 6 characters</span>
+                </small>
+            </label>
+            <div class="error" *ngIf="loginError">{{ loginError }}</div>
+            <button type="submit" [disabled]="loginForm.invalid">Login</button>
+        </form>
+    </div>
+</div>

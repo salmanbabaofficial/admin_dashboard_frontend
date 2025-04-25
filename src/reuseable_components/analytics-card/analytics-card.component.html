@@ -1,0 +1,18 @@
+<div class="card-content">
+    <div class="left">
+        <div class="icon-box">
+            <img [src]="icon" alt="icon" />
+        </div>
+        <div class="text">
+            <div class="title">{{ title }}</div>
+            <div class="value">{{ value }}</div>
+        </div>
+    </div>
+    <div class="trend-placeholder" [ngClass]="{
+      'trend': trend,
+      'positive': trend && isPositiveTrend(),
+      'negative': trend && !isPositiveTrend()
+    }">
+        <span *ngIf="trend">{{ trend }}</span>
+    </div>
+</div>

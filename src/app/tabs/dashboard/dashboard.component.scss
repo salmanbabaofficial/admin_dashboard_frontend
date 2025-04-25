@@ -1,0 +1,65 @@
+.dashboard-wrapper {
+  padding: 0 2rem;
+}
+
+.section-heading {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+:host {
+  display: block;
+
+  .analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-wrapper {
+    padding: 0 1rem;
+  }
+}
+
+.chart-row {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  flex-wrap: wrap;
+
+  >* {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+::ng-deep .orders-table-wrapper {
+  margin: 0 0 2rem 0 !important;
+}
+
+.table-header {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .go-to-orders a {
+    font-weight: 500;
+    color: #1976d2;
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+}

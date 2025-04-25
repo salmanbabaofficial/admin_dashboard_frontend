@@ -1,0 +1,9 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-content {
+  flex: 1;
+  transition: margin 0.3s ease;
+}

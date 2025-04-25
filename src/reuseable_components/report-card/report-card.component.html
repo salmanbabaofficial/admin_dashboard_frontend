@@ -1,0 +1,18 @@
+<div class="report-card">
+    <div class="report-header">
+        <div class="title-select">
+            <h2>Report</h2>
+            <select [(ngModel)]="selectedMetric">
+                <option *ngFor="let metric of metrics" [value]="metric">{{ metric }}</option>
+            </select>
+        </div>
+        <div class="filter">
+            <button (click)="changeRange('day')" [ngClass]="{ active: selectedRange === 'day' }">Day</button>
+            <button (click)="changeRange('week')" [ngClass]="{ active: selectedRange === 'week' }">Week</button>
+            <button (click)="changeRange('month')" [ngClass]="{ active: selectedRange === 'month' }">Month</button>
+            <button (click)="changeRange('year')" [ngClass]="{ active: selectedRange === 'year' }">Year</button>
+        </div>
+    </div>
+    <canvas baseChart [data]="lineChartData" [options]="lineChartOptions" type="line">
+    </canvas>
+</div>

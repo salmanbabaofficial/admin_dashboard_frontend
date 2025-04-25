@@ -1,0 +1,24 @@
+<div class="sidebar-panel">
+    <div class="company_details">
+        <fa-icon [icon]="faLayerGroup"></fa-icon>
+        <div class="company_name">
+            Manager <span>Pro</span>
+        </div>
+    </div>
+    <div class="tabs">
+        <ul class="sidebar-menu">
+            @for (link of tablinks; track link.id) {
+            @if(link.id === 7){
+            <hr class="menu-separator" />
+            }
+            <li>
+                <a class="tab-link" [routerLink]="link.route" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: false }" (click)="link?.click && link?.click()">
+                    <fa-icon [icon]="link.icon" style="margin-right: 10px;"></fa-icon>
+                    {{ link.link }}
+                </a>
+            </li>
+            }
+        </ul>
+    </div>
+</div>

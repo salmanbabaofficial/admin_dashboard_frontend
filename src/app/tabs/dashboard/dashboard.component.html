@@ -1,0 +1,23 @@
+<div class="dashboard-wrapper">
+    <h2 class="section-heading">Analytics</h2>
+    <div class="analytics-grid">
+        <app-analytics-card *ngFor="let card of analyticsCards" [title]="card.title" [value]="card.value"
+            [icon]="card.icon" [trend]="card.trend" />
+    </div>
+    
+    <!-- Chart-table -->
+    <div class="chart-row">
+        <app-report-card></app-report-card>
+        <app-visit-card></app-visit-card>
+    </div>
+
+    <!--Orders-table -->
+    <div class="table-header">
+        <h3>Recent Orders</h3>
+        <div class="go-to-orders">
+            <a routerLink="/orders">Go to Orders Page <fa-icon [icon]="faArrowRight"></fa-icon></a>
+        </div>
+    </div>
+    <app-table [title]="''" [dataSource]="dataSource" [displayedColumns]="displayedColumns" [showPaginator]="false">
+    </app-table>
+</div>
