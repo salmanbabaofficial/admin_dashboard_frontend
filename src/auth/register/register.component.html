@@ -1,0 +1,54 @@
+<div class="signup-container">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <h2>Signup</h2>
+
+        <label>
+            Name
+            <input type="text" formControlName="name" />
+        </label>
+        <div class="error" *ngIf="signupForm.get('name')?.touched && signupForm.get('name')?.invalid">
+            Name is required.
+        </div>
+
+        <label>
+            Email
+            <input type="email" formControlName="email" />
+        </label>
+        <div class="error" *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.invalid">
+            Enter a valid email.
+        </div>
+
+        <label>
+            Password
+            <input type="password" formControlName="password" />
+        </label>
+        <div class="error" *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid">
+            Password must be at least 6 characters.
+        </div>
+
+        <label>
+            Gender
+            <select formControlName="gender">
+                <option value="" disabled>Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </label>
+        <div class="error" *ngIf="signupForm.get('gender')?.touched && signupForm.get('gender')?.invalid">
+            Gender is required.
+        </div>
+
+        <label>
+            Address
+            <textarea formControlName="address"></textarea>
+        </label>
+        <div class="error" *ngIf="signupForm.get('address')?.touched && signupForm.get('address')?.invalid">
+            Address is required.
+        </div>
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+

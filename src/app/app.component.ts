@@ -15,8 +15,8 @@ import { NgIf } from '@angular/common';
 export class AppComponent {
   constructor(private router: Router) { }
 
-  get isLoginPage(): boolean {
-    return this.router.url === '/login';
+  get isAuthPage(): boolean {
+    return this.router.url === '/login' || this.router.url === '/signup' || this.router.url === '/forgot-password';
   }
-  
+
 }

@@ -1,55 +1,132 @@
-.login-container {
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
-    padding: 1rem;
+    background-color: #f5f6fa;
 }
 
-.login-card {
+.login-box {
     display: flex;
-    flex-wrap: wrap;
+    width: 900px;
     background: #fff;
-    border-radius: 1rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    max-width: 800px;
-    width: 100%;
+    border-radius: 0.75rem;
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.brand-section {
-    flex: 1 1 300px;
-    background: #007a8a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.left-side {
+    flex: 1;
+    background: #f0f0f0;
 
     img {
         width: 100%;
-        height: auto;
-        border-radius: 0.5rem;
-        object-fit: contain;
+        height: 100%;
+        object-fit: cover;
     }
 }
 
-.login-form {
-    flex: 1 1 300px;
-    padding: 2rem;
+.right-side {
+    flex: 1;
+    padding: 2.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    justify-content: center;
 
-    label {
+    .logo {
+        text-align: center;
+        margin-bottom: 2rem;
+
+        img {
+            height: 40px;
+            margin-bottom: 0.5rem;
+        }
+
+        .brand {
+            font-weight: bold;
+
+            span {
+                font-size: 0.9rem;
+                color: gray;
+            }
+        }
+    }
+
+    .form {
         display: flex;
         flex-direction: column;
-        font-weight: 500;
+        gap: 1rem;
 
         input {
-            padding: 0.5rem;
-            margin-top: 0.3rem;
+            padding: 0.7rem;
             border: 1px solid #ccc;
-            border-radius: 0.4rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .password-wrapper {
+            position: relative;
+
+            input {
+                padding-right: 2.5rem;
+            }
+
+            fa-icon {
+                position: absolute;
+                top: 50%;
+                right: 0.8rem;
+                transform: translateY(-50%);
+                cursor: pointer;
+                color: #888;
+            }
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+
+            a {
+                text-decoration: none;
+                color: #007bff;
+            }
+        }
+
+        .error {
+            color: red;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        button {
+            padding: 0.8rem;
+            background-color: #339af0;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            cursor: pointer;
+
+            &:disabled {
+                background-color: #aaa;
+                cursor: not-allowed;
+            }
+        }
+
+        .signup-text {
+            text-align: center;
+            font-size: 0.9rem;
+
+            a {
+                color: #007bff;
+                text-decoration: none;
+                font-weight: 500;
+            }
+        }
+
+        label {
+            font-weight: 500;
         }
 
         small {
@@ -57,64 +134,18 @@
             font-size: 0.75rem;
         }
     }
-
-    .error {
-        color: red;
-        font-size: 0.85rem;
-        text-align: center;
-    }
-
-    button {
-        padding: 0.7rem;
-        background: #007bff;
-        color: white;
-        border: none;
-        border-radius: 0.5rem;
-        cursor: pointer;
-        font-weight: 600;
-
-        &:disabled {
-            background: #888;
-            cursor: not-allowed;
-        }
-    }
 }
 
 @media (max-width: 768px) {
-    .login-card {
+    .login-box {
         flex-direction: column;
     }
 
-    .brand-section {
-        padding: 1rem;
-
-        img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            border-radius: 0.5rem;
-        }
+    .left-side {
+        display: none;
     }
 
-    .login-form {
-        padding: 1.5rem;
-    }
-}
-
-.password-field {
-    position: relative;
-
-    input {
-        width: 100%;
-        padding-right: 2.5rem;
-    }
-
-    fa-icon {
-        position: absolute;
-        right: 0.7rem;
-        top: 60%;
-        transform: translateY(-50%);
-        cursor: pointer;
-        color: #555;
+    .right-side {
+        padding: 2rem;
     }
 }

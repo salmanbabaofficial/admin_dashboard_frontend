@@ -2,8 +2,10 @@ import { Route } from '@angular/router';
 import { authGuard } from '../auth/auth.guard';
 
 export const APP_ROUTES: Route[] = [
-    { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: 'login', loadComponent: () => import('../auth/login/login.component').then((m) => m.LoginComponent)},
+    { path: '', redirectTo: 'signup', pathMatch: 'full' },
+    { path: 'signup', loadComponent: () => import('../auth/register/register.component').then((m) => m.RegisterComponent) },
+    { path: 'login', loadComponent: () => import('../auth/login/login.component').then((m) => m.LoginComponent) },
+    { path: 'forgot-password', loadComponent: () => import('../auth/forgot-password/forgot-password.component').then((m) => m.ForgotPasswordComponent) },
     { path: 'dashboard', loadComponent: () => import('./tabs/dashboard/dashboard.component').then(m => m.DashboardComponent), canActivate: [authGuard] },
     { path: 'orders', loadComponent: () => import('./tabs//orders/orders.component').then(m => m.OrdersComponent), canActivate: [authGuard] },
     { path: 'users', loadComponent: () => import('./tabs/users/users.component').then(m => m.UsersComponent), canActivate: [authGuard] },
